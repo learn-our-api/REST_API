@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+ http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans.xsd 
+ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd 
+ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+ 
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	
+	<jaxrs:server id="av-rest-apis" address="/">
+		<jaxrs:inInterceptors>
+			<bean class="com.cxf.restapis.framework.jaxrs.interceptors.JAXRSInInterceptor"/>
+			<bean class="com.cxf.restapis.framework.jaxrs.interceptors.AuthorizationInterceptor"/>
+			<bean class="com.cxf.restapis.framework.jaxrs.interceptors.DataValidationInterceptor"/>
+			<bean class="com.cxf.restapis.framework.jaxrs.interceptors.EventBeforeInInterceptor"/>
+		</jaxrs:inInterceptors>
+
+		<jaxrs:outInterceptors>
+			<bean class="com.cxf.restapis.framework.jaxrs.interceptors.EventAfterOutInterceptor"/>
+		</jaxrs:outInterceptors>
+
+		<jaxrs:outFaultInterceptors>
+			<bean class="com.cxf.restapis.framework.jaxrs.interceptors.HandlingOutFaultInterceptor"/>
+		</jaxrs:outFaultInterceptors>
+
+		<jaxrs:serviceBeans>
+			<bean id="userResource" class="com.cxf.restapis.resource.user.UserResource"></bean>
+			<bean id="dogResourceV1" class="com.cxf.restapis.resource.dog.DogResourceV1"></bean>
+			<bean id="dogResourceV4" class="com.cxf.restapis.resource.dog.DogResourceV4"></bean>
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean id="AuthenticationHandler" class="com.cxf.restapis.framework.jaxrs.providers.AuthenticationHandler"></bean>
+			<bean id="RESTExceptionMapper" class="com.cxf.restapis.framework.jaxrs.providers.RESTExceptionMapper"></bean>
+			<bean id="JSONProvider" class="com.cxf.restapis.framework.jaxrs.providers.JSONProvider"></bean>
+			<bean id="InputStreamProvider" class="com.cxf.restapis.framework.jaxrs.providers.InputStreamProvider"></bean>
+			<bean id="FormEncodingProvider" class="org.apache.cxf.jaxrs.provider.FormEncodingProvider"></bean>
+			<bean id="RESTResponseHandler" class="com.cxf.restapis.framework.jaxrs.providers.RESTResponseHandler"></bean>
+		</jaxrs:providers>
+	</jaxrs:server>	
+</beans> 
