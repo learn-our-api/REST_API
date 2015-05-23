@@ -13,4 +13,4 @@
  
  Final：正式版。
  
- 现阶段我们是Alpha版本，大家一起为Beta努力吧！
+ 当然，我们没有必要分这么细，Alpha，Beta,RC足够了，现阶段我们是Alpha版本，大家一起为Beta努力吧！:-D
