@@ -17,28 +17,21 @@ import com.wordnik.swagger.annotations.ApiParam;
 
 @Resource(ResourceName.dog)
 @Path("/v1/dogs")
-@Api(value = "/v4/dogs", description = "Operations about owners associated with specified record")
+@Api(value = "/v4/dogs", description = "Operations about dogs")
 @Produces( {MediaType.APPLICATION_JSON})
 public class DogResourceV1 {
 
 	@GET
 	@Path("/{id}")
 	@IgnoreAuthentication
-//	@ApiSecurity(parentResource = "record", parentId = ParamConstants.RECORD_ID, resource = "owner", applicability = BOTH)
-//	@Validations(value = {@Validation(paramName = "recordId", type = ValidationType.recordID)})
-	@ApiOperation(value = "Find Owners by Record ID", notes = "Find Owners by Record ID", responseClass = "com.cxf.restapis.resource.dog.DogModel", multiValueResponse = true)
-//	@ApiErrors(value = {@ApiError(code = SC_BAD_REQUEST, reason = "Invalid input parameters"),
-//			@ApiError(code = SC_NOT_FOUND, reason = "Owner not been found")})
-//	@ApiModelCustomConvertor(response="com.accela.restapis.json.impl.RefOwnerModelCustomConvertor")
+	@ApiOperation(value = "Find Dog by Dog ID", notes = "Find Dog by Dog ID", responseClass = "com.cxf.restapis.resource.dog.DogModel", multiValueResponse = true)
 	public ResponseModel getDogById(
-			@ApiParam(value = "ID of record that needs to be fetched", required = true) @PathParam("id") Long dogId)
+			@ApiParam(value = "ID of Dog that needs to be fetched", required = true) @PathParam("id") Long dogId)
 			throws Exception
 	{
 		DogModel dog = new DogService().getDog(dogId);
 		
 
-//		return ResponseHelper
-//				.buildResponseModel(dog, DogModel.class, null, true, "", false, false);
 		return ResponseHelper.buildResponseModel(dog, DogModel.class, null, true, "");
 		
 	}
