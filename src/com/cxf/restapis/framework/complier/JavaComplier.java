@@ -220,7 +220,7 @@ public class JavaComplier
 			urlPath.substring(lastPos2, lastPos1);
 			String classPath1 = ";" + getClassPath(urlPath);
 			String classPath2 =  getClassPath(urlPath) + ";";
-			if (classPath.indexOf(classPath1) < 0 && classPath.indexOf(classPath2) < 0)
+			if (!classPath1.endsWith(".class") && classPath.indexOf(classPath1) < 0 && classPath.indexOf(classPath2) < 0)
 			{
 				classPath.append(classPath1);
 			}
@@ -237,11 +237,21 @@ public class JavaComplier
 			{
 				String classPath1 = ";" + getClassPath(url.getPath());
 				String classPath2 =  getClassPath(url.getPath()) + ";";
-				if (classPath.indexOf(classPath1) < 0 && classPath.indexOf(classPath2) < 0)
+				if (classPath2.endsWith(".class;")) 
+				{
+					String classFilePath = ";" + getClassPath(clazz.getClassLoader()
+							.getResource("").getPath());
+					classFilePath = classFilePath.substring(0,
+							classFilePath.length() - 1) + ";";
+					if (classPath.indexOf(classFilePath) < 0) 
+					{
+						classPath.append(classFilePath);
+					}
+				} else if (classPath.indexOf(classPath1) < 0 && classPath.indexOf(classPath2) < 0)
 				{
 					classPath.append(classPath1);
-				}
-			}
+				} 
+			}			
 		}
 		return classPath.toString();
 	}

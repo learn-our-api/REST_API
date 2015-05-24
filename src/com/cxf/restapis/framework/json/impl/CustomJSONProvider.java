@@ -360,6 +360,7 @@ public class CustomJSONProvider
 			classList.add(JsonInclude.class);
 			classList.add(JsonGenerator.class);
 			classList.add(MapperFeature.class);
+			classList.add(JavaComplier.class);
 			List<String> errorMessages = JavaComplier.compile(classConvertorName, javaCode, classList);
 			if (errorMessages != null && errorMessages.size() > 0)
 			{
