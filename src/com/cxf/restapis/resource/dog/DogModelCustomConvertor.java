@@ -29,13 +29,20 @@ public class DogModelCustomConvertor extends CustomJSONConvertor implements
 		
 
 		// type mapping
-//		jsonNameMapping.put("status", "@com.accela.i18n.IdentifierModel");
+//		jsonNameMapping.put("dogAge", "@java.lang.Integer");
 
 	}
 
 	@Override
 	public void toJson(JsonGenerator generator, Object object) throws IOException
 	{
+//		this.setFields(CustomJsonThreadLocal.getFields());
+//		DogModel model = (DogModel) object;
+//		
+//		if (model.getDogAge() < 0)
+//		{
+//			model.setDogAge(0);
+//		}
 
 	}
 

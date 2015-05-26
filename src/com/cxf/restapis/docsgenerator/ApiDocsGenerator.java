@@ -3,6 +3,7 @@ package com.cxf.restapis.docsgenerator;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -70,31 +71,31 @@ public class ApiDocsGenerator
 	static
 	{
 		/** Initialize Global Services */
-		globalServices.add("com.accela.restapis.batch.BatchWebService");
-		globalServices.add("com.accela.restapis.search.GlobalSearchWebService");
-		globalServices.add("com.accela.restapis.search.GenericQueryWebService");
+//		globalServices.add("com.accela.restapis.batch.BatchWebService");
+//		globalServices.add("com.accela.restapis.search.GlobalSearchWebService");
+//		globalServices.add("com.accela.restapis.search.GenericQueryWebService");
 //		globalServices.add("com.accela.restapis.report.ReportResourceV1");
-		globalServices.add("com.accela.restapis.v1.finance.payment.OnlinePaymentWebService");
+//		globalServices.add("com.accela.restapis.v1.finance.payment.OnlinePaymentWebService");
 //		globalServices.add("com.accela.restapis.search.ProfessionalSearchV1");
 //		globalServices.add("com.accela.restapis.search.RecordSearchV1");
-		globalServices.add("com.accela.restapis.system.RegionalSettingsWebService");
-		globalServices.add("com.accela.restapis.system.DictionaryWebService");
-		globalServices.add("com.accela.restapis.contact.ContactWebService"); 
-		globalServices.add("com.accela.restapis.search.ContactSearchWebService");
-		globalServices.add("com.accela.restapis.address.ContactAddressWebService");
+//		globalServices.add("com.accela.restapis.system.RegionalSettingsWebService");
+//		globalServices.add("com.accela.restapis.system.DictionaryWebService");
+//		globalServices.add("com.accela.restapis.contact.ContactWebService"); 
+//		globalServices.add("com.accela.restapis.search.ContactSearchWebService");
+//		globalServices.add("com.accela.restapis.address.ContactAddressWebService");
 //		globalServices.add("com.accela.restapis.search.InspectionSearchV1");
 //		globalServices.add("com.accela.restapis.search.GlobalSearchV1");
 //		globalServices.add("com.accela.restapis.batch.BatchRequestV4");
-		globalServices.add("com.accela.restapis.auth.agency.AuthenticationWebService");
-		globalServices.add("com.accela.restapis.record.agency.RecordWebService");
-		globalServices.add("com.accela.restapis.address.agency.AddressWebService");
-		globalServices.add("com.accela.restapis.parcel.agency.ParcelWebService");
-		globalServices.add("com.accela.restapis.finance.agency.FeeWebService");
-		globalServices.add("com.accela.restapis.finance.agency.TransactionWebService");
-		globalServices.add("com.accela.restapis.system.agency.GenericViewWebService");
-		globalServices.add("com.accela.restapis.v1.system.finance.fee.RefFeeWebService");
-		globalServices.add("com.accela.restapis.professional.ProfessionalWebService");
-		globalServices.add("com.accela.restapis.system.MerchantAccountWebService");
+//		globalServices.add("com.accela.restapis.auth.agency.AuthenticationWebService");
+//		globalServices.add("com.accela.restapis.record.agency.RecordWebService");
+//		globalServices.add("com.accela.restapis.address.agency.AddressWebService");
+//		globalServices.add("com.accela.restapis.parcel.agency.ParcelWebService");
+//		globalServices.add("com.accela.restapis.finance.agency.FeeWebService");
+//		globalServices.add("com.accela.restapis.finance.agency.TransactionWebService");
+//		globalServices.add("com.accela.restapis.system.agency.GenericViewWebService");
+//		globalServices.add("com.accela.restapis.v1.system.finance.fee.RefFeeWebService");
+//		globalServices.add("com.accela.restapis.professional.ProfessionalWebService");
+//		globalServices.add("com.accela.restapis.system.MerchantAccountWebService");
 		
 		/** Initialize Agency Services */
 		
@@ -137,8 +138,8 @@ public class ApiDocsGenerator
 //		agencyServices.add("com.accela.restapis.record.RecordCommentResourceV4");
 //		agencyServices.add("com.accela.restapis.finance.FeeResourceV4");
 //		agencyServices.add("com.accela.restapis.finance.FeeSettingResourceV4");
-////		agencyServices.add("com.accela.restapis.finance.CashierPaymentResourceV4");
-////		agencyServices.add("com.accela.restapis.finance.RecordPaymentResourceV4");
+//		agencyServices.add("com.accela.restapis.finance.CashierPaymentResourceV4");
+//		agencyServices.add("com.accela.restapis.finance.RecordPaymentResourceV4");
 //		agencyServices.add("com.accela.restapis.workflow.MyWorkflowResourceV4");
 //		agencyServices.add("com.accela.restapis.contact.ContactResourceV4");
 //		agencyServices.add("com.accela.restapis.condition.ContactConditionResourceV4");
@@ -149,10 +150,10 @@ public class ApiDocsGenerator
 //		agencyServices.add("com.accela.restapis.finance.RecordInvoiceRessourceV4");
 //		agencyServices.add("com.accela.restapis.condition.RecordContactAddressResourceV4");
 //		agencyServices.add("com.accela.restapis.inspection.InspectionSettingResourceV4");
-////		agencyServices.add("com.accela.restapis.server.properties.ServerPropertiesV4");
+//		agencyServices.add("com.accela.restapis.server.properties.ServerPropertiesV4");
 //		agencyServices.add("com.accela.restapis.contact.RecordContactAttributeResourceV4");
 //		agencyServices.add("com.accela.restapis.timeaccounting.TimeAccountingSettingsResourceV4");
-////		agencyServices.add("com.accela.restapis.inspection.InspectionCommentResourceV4");
+//		agencyServices.add("com.accela.restapis.inspection.InspectionCommentResourceV4");
 //		agencyServices.add("com.accela.restapis.shoppingcart.ShoppingCartResourceV4");
 //		agencyServices.add("com.accela.restapis.announcement.AnnouncementResourceV4");
 //		agencyServices.add("com.accela.restapis.activity.ActivityResourceV4");
@@ -163,12 +164,12 @@ public class ApiDocsGenerator
 //		agencyServices.add("com.accela.restapis.timeaccounting.TimeAccountingResourceV4");
 //		agencyServices.add("com.accela.restapis.part.RecordPartTransactionResourceV4");
 //		agencyServices.add("com.accela.restapis.timeaccounting.MileageResourceV4");
-////		agencyServices.add("com.accela.restapis.finance.PaymentSettingResourceV4");
+//		agencyServices.add("com.accela.restapis.finance.PaymentSettingResourceV4");
 //		agencyServices.add("com.accela.restapis.condition.InspectionConditionPermissionResourceV4");
-////		agencyServices.add("com.accela.restapis.finance.PaymentResourceV4");
+//		agencyServices.add("com.accela.restapis.finance.PaymentResourceV4");
 //		agencyServices.add("com.accela.restapis.finance.InvoiceSettingResourceV4");
 //		agencyServices.add("com.accela.restapis.report.ReportResourceV1");
-////		agencyServices.add("com.accela.restapis.citizen.PublicUserResourceV1");
+//		agencyServices.add("com.accela.restapis.citizen.PublicUserResourceV1");
 //		agencyServices.add("com.accela.restapis.address.AddressResourceV1");
 //		agencyServices.add("com.accela.restapis.parcel.ParcelResourceV1");
 //		agencyServices.add("com.accela.restapis.owner.OwnerResourceV1");
@@ -186,9 +187,9 @@ public class ApiDocsGenerator
 //		agencyServices.add("com.accela.restapis.search.RecordSearchV1");
 //		agencyServices.add("com.accela.restapis.inspection.guidesheet.RefGuideSheetResourceV1");
 //		agencyServices.add("com.accela.restapis.inspection.guidesheet.GuideSheetGroupResourceV1");
-////		agencyServices.add("com.accela.restapis.inspection.InspectionResourceV1");
-////		agencyServices.add("com.accela.restapis.inspection.InspectionCommentResourceV1");
-////		agencyServices.add("com.accela.restapis.inspection.InspectionSettingResourceV1");
+//		agencyServices.add("com.accela.restapis.inspection.InspectionResourceV1");
+//		agencyServices.add("com.accela.restapis.inspection.InspectionCommentResourceV1");
+//		agencyServices.add("com.accela.restapis.inspection.InspectionSettingResourceV1");
 //		agencyServices.add("com.accela.restapis.search.InspectionSearchV1");
 //		agencyServices.add("com.accela.restapis.inspector.InspectorResourceV1");
 //		agencyServices.add("com.accela.restapis.search.GlobalSearchV1");
@@ -204,11 +205,11 @@ public class ApiDocsGenerator
 //		agencyServices.add("com.accela.restapis.inspection.guidesheet.GuideSheetItemASIResourceV1");
 //		agencyServices.add("com.accela.restapis.inspection.guidesheet.GuideSheetItemASITResourceV1");
 //		agencyServices.add("com.accela.restapis.document.DocumentSettingResourceV1");
-////		agencyServices.add("com.accela.restapis.inspection.InspectionRelationsResourceV1");
+//		agencyServices.add("com.accela.restapis.inspection.InspectionRelationsResourceV1");
 //		agencyServices.add("com.accela.restapis.condition.RecordConditionResourceV1");
 //		agencyServices.add("com.accela.restapis.part.AssetPartResourceV4");
 //		
-////		agencyServices.add("com.accela.restapis.finance.PaymentResourceV4");
+//		agencyServices.add("com.accela.restapis.finance.PaymentResourceV4");
 //		agencyServices.add("com.accela.restapis.document.thirdparty.ThirdPartyDocumentResource");
 //		agencyServices.add("com.accela.restapis.document.thirdparty.ThirdPartyRecordDocumentResource");
 //		agencyServices.add("com.accela.restapis.contact.ContactASITResourceV4");
@@ -217,6 +218,7 @@ public class ApiDocsGenerator
 		//agencyServices.add("com.accela.restapis.route.RouteResourceV1");
 		//agencyServices.add("com.accela.restapis.auth.AuthenticationResourceV1");
 		//agencyServices.add("com.accela.restapis.task.TaskResourceV1");
+		agencyServices.add("com.cxf.restapis.resource.dog.DogResourceV4");
 		
 		/** Initialize Citizen Services */
 //		citizenServices.add("com.accela.restapis.auth.citizen.AuthenticationWebService");
@@ -266,9 +268,9 @@ public class ApiDocsGenerator
 //		citizenServices.add("com.accela.restapis.condition.InspectionConditionPermissionResourceV4");
 //		citizenServices.add("com.accela.restapis.document.thirdparty.ThirdPartyDocumentResource");
 //		citizenServices.add("com.accela.restapis.document.thirdparty.ThirdPartyRecordDocumentResource");
-		citizenServices.add("com.accela.restapis.citizen.PublicUserResourceV4");
-		citizenServices.add("com.accela.restapis.contact.ContactASITResourceV4");
-		citizenServices.add("com.accela.restapis.trustaccount.TrustAccountResourceV4");
+//		citizenServices.add("com.accela.restapis.citizen.PublicUserResourceV4");
+//		citizenServices.add("com.accela.restapis.contact.ContactASITResourceV4");
+//		citizenServices.add("com.accela.restapis.trustaccount.TrustAccountResourceV4");
 	}
 
 	/**
@@ -293,29 +295,21 @@ public class ApiDocsGenerator
 			}
 			
 		}
-		String testPath = "C:/aa/source/biz/modules/rest-apis/";
-		try
-		{
-			testPath = new File(".").getCanonicalPath()+"/";
-		}
-		catch (IOException e)
-		{			
-			e.printStackTrace();
-		}
+		String testPath = "D:/AA7.2.0/main-dev/biz/modules/rest-apis/";
 		/** Auto generate documentation for agency services */
 		String agencyPath = "docs/agency/";
 		String serviceBeanPath = "java/com/accela/restapis";
 		
-//		Collections.sort(agencyServices);
-//		Collections.reverse(agencyServices);
-//		
-//		List<Class<?>> agencyClassList = BeanContext.loadClasses(agencyServices, serviceBeanPath);	
-//		ApiDocsGenerator.generate(agencyClassList, testPath+agencyPath, generatorVersion);
+		Collections.sort(agencyServices);
+		Collections.reverse(agencyServices);
+		
+		List<Class<?>> agencyClassList = BeanContext.loadClasses(agencyServices, serviceBeanPath);	
+		ApiDocsGenerator.generate(agencyClassList, testPath+agencyPath, generatorVersion);
 	
-		/** Auto generate documentation for citizen services */
-		String citizenPath = "docs/citizen/";
-		List<Class<?>> citizenClassList = BeanContext.loadClasses(citizenServices, serviceBeanPath);
-		ApiDocsGenerator.generate(citizenClassList, testPath+citizenPath,generatorVersion);
+//		/** Auto generate documentation for citizen services */
+//		String citizenPath = "docs/citizen/";
+//		List<Class<?>> citizenClassList = BeanContext.loadClasses(citizenServices, serviceBeanPath);
+//		ApiDocsGenerator.generate(citizenClassList, testPath+citizenPath,generatorVersion);
 //
 		/** Auto generate documentation for global services */
 //		String globalPath = "docs/";

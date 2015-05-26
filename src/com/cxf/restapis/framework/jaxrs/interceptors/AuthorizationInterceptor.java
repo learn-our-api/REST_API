@@ -39,6 +39,7 @@ import com.cxf.restapis.framework.util.ParameterHelper;
 import com.cxf.restapis.framework.util.ResponseHelper;
 import com.cxf.restapis.framework.util.ValidationUtil;
 import com.cxf.restapis.framework.util.WebThreadLocal;
+import com.cxf.restapis.resource.dog.DogSecurityAuthorizer;
 
 /**
  * <pre>
@@ -79,7 +80,7 @@ public class AuthorizationInterceptor extends AbstractPhaseInterceptor<Message>
 		securityHandlerMap.put(FID.class, new FIDSecurityHandler());
 
 		// TODO: use configuration instead of adding dependency here
-//		standardSecurityHandlerMap.put("", new RecordSecurityAuthorizer());
+		standardSecurityHandlerMap.put("dog", new DogSecurityAuthorizer());
 	}
 	
 	
