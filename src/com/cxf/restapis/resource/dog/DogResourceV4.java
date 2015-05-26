@@ -37,7 +37,7 @@ public class DogResourceV4 {
 	@Path("/{id}")
 	@IgnoreAuthentication
 	@ApiSecurity(resource = "dog", operation = "R", applicability = BOTH)
-//	@Validations(value = {@Validation(paramName = "id", type = ValidationType.Number)})
+	@Validations(value = {@Validation(paramName = "id", type = ValidationType.Number)})
 	@ApiOperation(value = "Find Owners by Record ID", notes = "Find Owners by Record ID", responseClass = "com.cxf.restapis.resource.dog.DogModel", multiValueResponse = false)
 	@ApiErrors(value = {@ApiError(code = SC_BAD_REQUEST, reason = "Invalid input parameters"),
 			@ApiError(code = SC_NOT_FOUND, reason = "Owner not been found")})

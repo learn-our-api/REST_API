@@ -85,7 +85,8 @@ public class ParameterHelper
 			UriInfo uriInfo = new UriInfoImpl(message, null);
 			MultivaluedMap<String, String> map = new MetadataMap<String, String>();
 
-			t1.match(uriInfo.getPath(), map);
+			String uriInfoPath = ValidationUtil.isEmpty(uriInfo.getPath()) ? null : "/" + uriInfo.getPath();
+			t1.match(uriInfoPath, map);
 			String str = map.get(URITemplate.FINAL_MATCH_GROUP).get(0);
 			t2.match(str, map);
 
